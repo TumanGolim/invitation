@@ -1,23 +1,77 @@
+/* -------------------------------------------------------------------------- */
+/* 1. Глобальные и Шрифты                            */
+/* -------------------------------------------------------------------------- */
+
+/* ВНИМАНИЕ: Проверьте путь к вашему шрифту. 
+    src: url("/wedding/") format("truetype"); — скорее всего, неверный путь.
+    Убедитесь, что там указано полное имя файла (например, /wedding/GreatVibes-Regular.woff2).
+    Рекомендуется использовать формат WOFF2 для веба.
+*/
+@font-face {
+  font-family: "Great Vibes";
+  src: url("/wedding/") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Базовые стили для адаптивности и отступов */
+body {
+  margin: 0;
+  padding: 0 15px; /* Отступ по бокам для мобильных устройств */
+  box-sizing: border-box;
+  /* Установим Raleway для всего тела, если не переопределено */
+  font-family: Raleway, sans-serif;
+  line-height: 1.4;
+  color: #333; /* Добавим базовый цвет текста */
+}
+
+.divider {
+  width: 145px;
+  height: 0;
+  border-top: 1px solid #000; /* колір лінії */
+  opacity: 1;
+  margin: 20px auto; /* центрування */
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. Секция Hero                               */
+/* -------------------------------------------------------------------------- */
+
 .main-hero {
   position: relative;
-  width: 551px;
-  height: 836px;
+  /* Ограничиваем максимальную ширину, но позволяем заполнить 100% экрана на мобильном */
+  width: 100%;
+  max-width: 551px;
   margin: 0 auto;
-  border-radius: 6px;
   overflow: hidden;
+  border-radius: 6px;
+  /* Сохраняем пропорции 551:836 */
+  aspect-ratio: 551 / 836;
 }
 
 .main-hero img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
   filter: grayscale(100%);
+  opacity: 1;
+  position: absolute; /* Используем absolute для центрирования обрезки */
+  top: 50%;
+  left: 50%;
+  /* Сдвиг, чтобы центрировать изображение, а не использовать фиксированные -66px и -79px */
+  transform: translate(-50%, -50%);
 }
+/* ВАЖНО: Если вам нужно сохранить ту же обрезку, что была с top: -66px; left: -79px; 
+   на мобильном, вам, вероятно, понадобится добавить дополнительный контейнер или
+   изменить transform: translate, но это редко нужно при object-fit: cover.
+   Я оставил его центрированным.
+*/
 
 .main-overlay {
   position: absolute;
-  bottom: 80px;
+  bottom: 40px; /* Уменьшим отступ снизу для мобильного */
   width: 100%;
   text-align: center;
   color: white;
@@ -26,36 +80,65 @@
 .main-title {
   font-family: "Great Vibes", cursive;
   font-weight: 400;
-  font-size: 52px;
+  font-size: 44px; /* Уменьшим для мобильного */
   line-height: 100%;
   margin: 0;
 }
 
 .main-date {
-  font-family: "Raleway", sans-serif;
+  font-family: Raleway, sans-serif;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px; /* Уменьшим для мобильного */
   line-height: 100%;
-  margin-top: 12px;
-}
-.invitation-text {
-  font-family: Raleway;
-  font-weight: 500;
-  font-style: Medium;
-  font-size: 18px;
-  line-height: 140%;
-  letter-spacing: 0%;
-  text-align: center;
+  margin-top: 10px;
 }
 
-.invitation-location {
-  font-family: Raleway;
-  font-weight: 700;
-  font-style: Bold;
-  font-size: 18px;
-  line-height: 140%;
-  letter-spacing: 0%;
+/* -------------------------------------------------------------------------- */
+/* 3. Текстовые блоки                              */
+/* -------------------------------------------------------------------------- */
+
+.invitation-text,
+.invitation-location,
+.telegram-text,
+.telegram-friends,
+.telegram-final,
+.dresscode-text,
+.afterparty-text,
+.afterparty-subtext,
+.highlight,
+.invitation-note {
+  /* Унифицируем стили текста для лучшей читаемости и адаптивности */
+  font-family: Raleway, sans-serif;
+  font-weight: 500;
+  font-size: 16px; /* Базовый размер для мобильного */
+  line-height: 1.6;
   text-align: center;
+  max-width: 600px; /* Ограничим ширину текста для читаемости */
+  margin: 10px auto;
+}
+
+.telegram-icon {
+  width: 40px; /* розмір іконки */
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.telegram-icon:hover {
+  transform: scale(1.1); /* легке збільшення при наведенні */
+}
+
+.telegram-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.invitation-note {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.highlight {
+  font-weight: 700;
 }
 
 .location-link {
@@ -67,11 +150,17 @@
   text-decoration: underline;
 }
 
+/* -------------------------------------------------------------------------- */
+/* 4. Секция Location                              */
+/* -------------------------------------------------------------------------- */
+
 .location-hero {
   position: relative;
-  width: 334px;
-  height: 303px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 334px;
+  height: auto;
+  aspect-ratio: 334 / 303;
+  margin: 20px auto;
   border-radius: 6px;
   overflow: hidden;
 }
@@ -79,186 +168,211 @@
 .location-hero img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
+  filter: grayscale(100%);
 }
 
 .location-overlay {
   position: absolute;
-  bottom: 80px;
+  bottom: 40px; /* Адаптивный отступ */
   width: 100%;
   text-align: center;
   color: white;
 }
 
 .location-title {
-  font-family: Great Vibes;
+  font-family: Great Vibes, cursive;
   font-weight: 400;
-  font-style: Regular;
-  font-size: 42px;
-  line-height: 140%;
-  letter-spacing: 0%;
+  font-size: 36px; /* Уменьшим для мобильного */
   text-align: center;
 }
 
-.invitation-note {
-  font-family: Raleway;
-  font-weight: 500;
-  font-style: Italic;
-  font-size: 18px;
-  line-height: 140%;
-  letter-spacing: 0%;
-  text-align: center;
-}
+/* -------------------------------------------------------------------------- */
+/* 5. Секция Dresscode                            */
+/* -------------------------------------------------------------------------- */
 
-.dresscode-title {
-  font-family: Raleway;
+.dresscode-title,
+.palette-title,
+.age-text {
+  font-family: Raleway, sans-serif;
   font-weight: 300;
-  font-style: Light;
-  font-size: 30px;
+  font-size: 24px; /* Уменьшим для мобильного */
   line-height: 100%;
-  letter-spacing: 0%;
   text-align: center;
   text-transform: uppercase;
+  margin: 30px auto 15px; /* Увеличим отступы */
 }
 
-.dresscode-text {
-  font-family: Raleway;
-  font-weight: 500;
-  font-style: Medium;
-  font-size: 18px;
-  line-height: 140%;
-  letter-spacing: 0%;
+/* -------------------------------------------------------------------------- */
+/* 6. Секция Palette                             */
+/* -------------------------------------------------------------------------- */
+
+.palette {
   text-align: center;
+  margin: 20px 0;
 }
 
-.palette-title {
-  font-family: Raleway;
-  font-weight: 300;
-  font-style: Light;
-  font-size: 30px;
-  line-height: 140%;
-  letter-spacing: 0%;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.palette-hero {
+.palette img {
+  width: 100%;
+  max-width: 333px;
+  height: auto;
+  aspect-ratio: 333 / 420;
+  object-fit: cover;
+  display: block;
+  opacity: 1;
+  margin: 0 auto;
+  border-radius: 6px;
 }
 
 .palette-note {
-  font-family: Raleway;
+  font-family: Raleway, sans-serif;
   font-weight: 700;
-  font-style: Italic;
-  font-size: 18px;
-  line-height: 140%;
-  letter-spacing: 0%;
+  font-style: italic;
+  font-size: 16px; /* Базовый размер */
   text-align: center;
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 7. Секция Age                               */
+/* -------------------------------------------------------------------------- */
+
+.age {
+  text-align: center;
+  margin: 20px 0;
 }
 
 .age-hero {
-  width: 334;
-  height: 417.5;
-  opacity: 1;
+  width: 100%;
+  max-width: 334px;
+  height: auto;
+  aspect-ratio: 334 / 417.5;
+  object-fit: cover;
   border-radius: 6px;
+  filter: grayscale(100%);
+  display: block;
+  margin: 0 auto;
 }
 
-.age-text {
-  font-family: Raleway;
-  font-weight: 400;
-  font-style: Regular;
-  font-size: 30px;
-  line-height: 140%;
-  letter-spacing: 0%;
+/* -------------------------------------------------------------------------- */
+/* 8. Секция Afterparty                          */
+/* -------------------------------------------------------------------------- */
+
+.afterparty {
   text-align: center;
-  text-transform: uppercase;
+  margin: 20px 0;
 }
 
-.afterparty-text {
-  font-family: Raleway;
-  font-weight: 700;
-  font-style: Bold;
-  font-size: 18px;
-  line-height: 140%;
-  letter-spacing: 0%;
-  text-align: center;
+.afterparty img {
+  max-width: 199px;
+  width: 50%; /* Сделаем изображение меньше на мобильном */
+  height: auto;
+  aspect-ratio: 199 / 249;
+  object-fit: cover;
+  border-radius: 6px;
+  filter: grayscale(100%);
+  display: block;
+  margin: 0 auto;
 }
 
-.afterparty-subtext {
-  font-family: Raleway;
-  font-weight: 500;
-  font-style: Italic;
-  font-size: 18px;
-  line-height: 140%;
-  letter-spacing: 0%;
-  text-align: center;
-}
-
-.telegram-text {
-  font-family: Raleway;
-  font-weight: 500;
-  font-style: Medium;
-  font-size: 18px;
-  line-height: 140%;
-  letter-spacing: 0%;
-  text-align: center;
-}
-
-.telegram-friends {
-  font-family: Raleway;
-  font-weight: 500;
-  font-style: Medium;
-  font-size: 18px;
-  line-height: 140%;
-  letter-spacing: 0%;
-  text-align: center;
-}
-
-.telegram-final {
-  font-family: Raleway;
-  font-weight: 500;
-  font-style: Medium;
-  font-size: 18px;
-  line-height: 140%;
-  letter-spacing: 0%;
-  text-align: center;
-}
+/* -------------------------------------------------------------------------- */
+/* 9. Секция Signature                           */
+/* -------------------------------------------------------------------------- */
 
 .signature-hero {
   position: relative;
-  width: 551px;
-  height: 836px;
-  margin: 0 auto;
-  border-radius: 6px;
+  width: 100%;
+  max-width: 505px;
+  height: auto;
+  aspect-ratio: 505 / 652;
+  margin: 40px auto; /* Увеличим отступ */
   overflow: hidden;
+  border-radius: 6px;
 }
 
 .signature-hero img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
   filter: grayscale(100%);
+  opacity: 1;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 .signature-overlay {
   position: absolute;
-  bottom: 80px;
+  bottom: 40px; /* Адаптивный отступ */
   width: 100%;
   text-align: center;
   color: white;
 }
 
 .signature-title {
-  font-family: Great Vibes;
+  font-family: Great Vibes, cursive;
   font-weight: 400;
-  font-style: Regular;
-  font-size: 46px;
-  line-height: 100%;
-  letter-spacing: 0%;
+  font-size: 36px; /* Уменьшим для мобильного */
   text-align: center;
 }
 
-.image {
-  filter: grayscale(100%);
+/* -------------------------------------------------------------------------- */
+/* 10. МЕДИА-ЗАПРОСЫ (НОУТБУК)                     */
+/* -------------------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* На экранах >= 768px увеличиваем размеры шрифтов и отступы */
+
+  body {
+    padding: 0 40px; /* Увеличиваем отступы по бокам для ноутбука */
+  }
+
+  /* Hero */
+  .main-hero {
+    margin-top: 50px;
+  }
+  .main-overlay {
+    bottom: 80px; /* Восстановим большой отступ */
+  }
+  .main-title {
+    font-size: 52px; /* Восстановим исходный размер */
+  }
+  .main-date {
+    font-size: 20px; /* Восстановим исходный размер */
+  }
+
+  /* Текст */
+  .invitation-text,
+  .invitation-location,
+  .telegram-text,
+  .telegram-friends,
+  .telegram-final,
+  .dresscode-text,
+  .afterparty-text,
+  .afterparty-subtext,
+  .highlight,
+  .invitation-note {
+    font-size: 18px; /* Восстановим исходный размер */
+  }
+
+  /* Заголовки */
+  .dresscode-title,
+  .palette-title,
+  .age-text {
+    font-size: 30px; /* Восстановим исходный размер */
+  }
+
+  .location-title,
+  .signature-title {
+    font-size: 42px; /* Восстановим исходный размер */
+  }
+
+  /* Afterparty Image */
+  .afterparty img {
+    width: auto;
+    max-width: 199px; /* Восстановим исходную ширину */
+  }
 }
