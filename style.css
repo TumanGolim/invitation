@@ -1,28 +1,93 @@
-.location-hero {
+.main-hero {
+  position: relative;
+  width: 551px;
+  height: 836px;
+  margin: 0 auto;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.main-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
   filter: grayscale(100%);
 }
 
-.afterparty-hero {
-  filter: grayscale(100%);
-}
-
-.main-title {
-  font-family: Great Vibes;
-  font-weight: 400;
-  font-style: Regular;
-  font-size: 52px;
-  line-height: 100%;
-  letter-spacing: 0%;
+.main-overlay {
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
   text-align: center;
   color: white;
 }
+
+.main-title {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 100%;
+  margin: 0;
+}
+
 .main-date {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  margin-top: 12px;
+}
+.invitation-text {
   font-family: Raleway;
   font-weight: 500;
   font-style: Medium;
-  font-size: 20px;
-  line-height: 100%;
+  font-size: 18px;
+  line-height: 140%;
   letter-spacing: 0%;
+  text-align: center;
+}
+
+.invitation-location {
+  font-family: Raleway;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.location-link {
+  color: #1596ec;
+  text-decoration: none;
+}
+
+.location-link:hover {
+  text-decoration: underline;
+}
+
+.location-hero {
+  position: relative;
+  width: 334px;
+  height: 303px;
+  margin: 0 auto;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.location-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.location-overlay {
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
+  text-align: center;
   color: white;
 }
 
@@ -34,45 +99,6 @@
   line-height: 140%;
   letter-spacing: 0%;
   text-align: center;
-  color: white;
-}
-.signature-title {
-  font-size: 24px;
-  color: #2c2c2c;
-}
-
-.invitation,
-.dresscode,
-.palette,
-.age,
-.afterparty,
-.telegram,
-.signature {
-  background: #fff;
-  border-radius: 12px;
-  padding: 30px 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-.invitation-text {
-  font-family: Raleway;
-  font-weight: 500;
-  font-style: Medium;
-  font-size: 18px;
-  line-height: 140%;
-  letter-spacing: 0%;
-  text-align: center;
-}
-.invitation-location {
-  font-family: Raleway;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 18px;
-  line-height: 140%;
-  letter-spacing: 0%;
-  text-align: center;
-  color: #1596ec;
 }
 
 .invitation-note {
@@ -83,6 +109,17 @@
   line-height: 140%;
   letter-spacing: 0%;
   text-align: center;
+}
+
+.dresscode-title {
+  font-family: Raleway;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .dresscode-text {
@@ -106,6 +143,9 @@
   text-transform: uppercase;
 }
 
+.palette-hero {
+}
+
 .palette-note {
   font-family: Raleway;
   font-weight: 700;
@@ -114,6 +154,13 @@
   line-height: 140%;
   letter-spacing: 0%;
   text-align: center;
+}
+
+.age-hero {
+  width: 334;
+  height: 417.5;
+  opacity: 1;
+  border-radius: 6px;
 }
 
 .age-text {
@@ -129,6 +176,26 @@
 
 .afterparty-text {
   font-family: Raleway;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.afterparty-subtext {
+  font-family: Raleway;
+  font-weight: 500;
+  font-style: Italic;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.telegram-text {
+  font-family: Raleway;
   font-weight: 500;
   font-style: Medium;
   font-size: 18px;
@@ -137,19 +204,16 @@
   text-align: center;
 }
 
-.afterparty-subtext {
-  width: 334;
-  height: 75;
-  opacity: 1;
-  gap: 10px;
-  border-bottom-width: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+.telegram-friends {
+  font-family: Raleway;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-align: center;
 }
 
-.dresscode-title,
-.telegram-text,
-.telegram-friends,
 .telegram-final {
   font-family: Raleway;
   font-weight: 500;
@@ -160,8 +224,32 @@
   text-align: center;
 }
 
-.dresscode-title,
-.palette-title {
+.signature-hero {
+  position: relative;
+  width: 551px;
+  height: 836px;
+  margin: 0 auto;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.signature-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: grayscale(100%);
+}
+
+.signature-overlay {
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.signature-title {
   font-family: Great Vibes;
   font-weight: 400;
   font-style: Regular;
@@ -171,97 +259,6 @@
   text-align: center;
 }
 
-.highlight {
-  color: #1e1e1e;
-  font-weight: 700;
-}
-
-@media (max-width: 600px) {
-  div.invitation,
-  div.dresscode,
-  div.palette,
-  div.age,
-  div.afterparty,
-  div.telegram,
-  div.signature {
-    padding: 20px 10px;
-  }
-
-  .hero {
-    height: 180px;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
-  h2 {
-    font-size: 20px;
-  }
-  p {
-    font-size: 14px;
-  }
-}
-
-@media (min-width: 601px) and (max-width: 900px) {
-  div.invitation,
-  div.dresscode,
-  div.palette,
-  div.age,
-  div.afterparty,
-  div.telegram,
-  div.signature {
-    padding: 25px 15px;
-  }
-
-  .hero {
-    height: 280px;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-  h2 {
-    font-size: 22px;
-  }
-  p {
-    font-size: 15px;
-  }
-}
-
-@media (min-width: 901px) {
-  div.invitation,
-  div.dresscode,
-  div.palette,
-  div.age,
-  div.afterparty,
-  div.telegram,
-  div.signature {
-    padding: 40px 20px;
-  }
-
-  .hero {
-    height: auto;
-  }
-
-  h1 {
-    font-size: 36px;
-  }
-  h2 {
-    font-size: 28px;
-  }
-  p {
-    font-size: 16px;
-  }
-}
-
-.hero,
-.overlay,
-div.invitation,
-div.dresscode,
-div.palette,
-div.age,
-div.afterparty,
-div.telegram,
-div.signature {
-  transition: all 0.3s ease-in-out;
+.image {
+  filter: grayscale(100%);
 }
