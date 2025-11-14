@@ -18,7 +18,6 @@
 /* Базовые стили для адаптивности и отступов */
 body {
   margin: 0;
-  padding: 0 15px; /* Отступ по бокам для мобильных устройств */
   box-sizing: border-box;
   /* Установим Raleway для всего тела, если не переопределено */
   font-family: Raleway, sans-serif;
@@ -106,15 +105,17 @@ body {
 .telegram-final,
 .dresscode-text,
 .highlight,
-.invitation-note {
-  /* Унифицируем стили текста для лучшей читаемости и адаптивности */
+.invitation-note,
+.afterparty-text,
+.afterparty-subtext {
   font-family: Raleway, sans-serif;
   font-weight: 500;
-  font-size: 16px; /* Базовый размер для мобильного */
+  font-size: 16px;
   line-height: 1.6;
   text-align: center;
-  max-width: 600px; /* Ограничим ширину текста для читаемости */
-  margin: 10px auto;
+  max-width: 600px; /* ограничение ширины */
+  margin: 10px auto; /* вертикальные отступы */
+  box-sizing: border-box; /* чтобы padding не ломал max-width */
 }
 
 .telegram-icon {
@@ -176,17 +177,23 @@ body {
 
 .location-overlay {
   position: absolute;
-  bottom: 40px; /* Адаптивный отступ */
+  top: 0;
+  left: 0;
   width: 100%;
-  text-align: center;
+  height: 100%;
+
+  display: flex;
+  justify-content: center; /* по горизонтали */
+  align-items: center; /* по вертикали */
+
   color: white;
+  text-align: center;
 }
 
 .location-title {
   font-family: Great Vibes, cursive;
   font-weight: 400;
-  font-size: 36px; /* Уменьшим для мобильного */
-  text-align: center;
+  font-size: 36px;
 }
 
 /* -------------------------------------------------------------------------- */
