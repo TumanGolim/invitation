@@ -104,7 +104,6 @@ body {
 .telegram-friends,
 .telegram-final,
 .dresscode-text,
-.highlight,
 .invitation-note,
 .afterparty-text,
 .afterparty-subtext {
@@ -114,8 +113,14 @@ body {
   line-height: 1.6;
   text-align: center;
   max-width: 600px; /* ограничение ширины */
-  margin: 10px auto; /* вертикальные отступы */
+  margin: 10px 30px auto 30px; /* вертикальные отступы */
   box-sizing: border-box; /* чтобы padding не ломал max-width */
+}
+.invitation-text {
+  width: 290px;
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .telegram-icon {
@@ -141,6 +146,9 @@ body {
 
 .highlight {
   font-weight: 700;
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  box-sizing: border-box; /* чтобы padding не ломал max-width */
 }
 
 .location-link {
