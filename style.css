@@ -31,7 +31,8 @@ body {
   height: 0;
   border-top: 1px solid #000; /* колір лінії */
   opacity: 1;
-  margin: 20px auto; /* центрування */
+  margin: 30px auto; /* центрування */
+  margin-bottom: 100px;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -46,6 +47,7 @@ body {
   margin: 0 auto;
   overflow: hidden;
   border-radius: 6px;
+  margin-bottom: 40px;
   /* Сохраняем пропорции 551:836 */
   aspect-ratio: 551 / 836;
 }
@@ -103,8 +105,6 @@ body {
 .telegram-friends,
 .telegram-final,
 .dresscode-text,
-.afterparty-text,
-.afterparty-subtext,
 .highlight,
 .invitation-note {
   /* Унифицируем стили текста для лучшей читаемости и адаптивности */
@@ -128,8 +128,9 @@ body {
 }
 
 .telegram-link {
-  display: inline-block;
-  text-decoration: none;
+  display: block;
+  margin: 40px auto 70px auto; /* top:40px, bottom:70px */
+  text-align: center;
 }
 
 .invitation-note {
@@ -160,7 +161,7 @@ body {
   max-width: 334px;
   height: auto;
   aspect-ratio: 334 / 303;
-  margin: 20px auto;
+  margin: 30px auto;
   border-radius: 6px;
   overflow: hidden;
 }
@@ -210,7 +211,7 @@ body {
 
 .palette {
   text-align: center;
-  margin: 20px 0;
+  margin: 100px 0;
 }
 
 .palette img {
@@ -277,6 +278,26 @@ body {
   margin: 0 auto;
 }
 
+.afterparty-text {
+  font-family: Raleway, sans-serif;
+  font-weight: 500;
+  font-size: 16px; /* Базовый размер для мобильного */
+  line-height: 1.6;
+  text-align: center;
+  max-width: 600px; /* Ограничим ширину текста для читаемости */
+  margin: auto;
+  margin-bottom: 40px;
+}
+.afterparty-subtext {
+  font-family: Raleway, sans-serif;
+  font-weight: 500;
+  font-size: 16px; /* Базовый размер для мобильного */
+  line-height: 1.6;
+  text-align: center;
+  max-width: 600px; /* Ограничим ширину текста для читаемости */
+  margin: 40px auto;
+}
+
 /* -------------------------------------------------------------------------- */
 /* 9. Секция Signature                           */
 /* -------------------------------------------------------------------------- */
@@ -287,7 +308,7 @@ body {
   max-width: 505px;
   height: auto;
   aspect-ratio: 505 / 652;
-  margin: 40px auto; /* Увеличим отступ */
+  margin: 75px auto 0 auto; /* top:75px, left/right:center, bottom:0 */
   overflow: hidden;
   border-radius: 6px;
 }
@@ -332,7 +353,7 @@ body {
 
   /* Hero */
   .main-hero {
-    margin-top: 50px;
+    margin-top: 0px;
   }
   .main-overlay {
     bottom: 80px; /* Восстановим большой отступ */
