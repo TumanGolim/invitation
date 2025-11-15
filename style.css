@@ -113,14 +113,8 @@ body {
   line-height: 1.6;
   text-align: center;
   max-width: 600px; /* ограничение ширины */
-  margin: 10px 30px auto 30px; /* вертикальные отступы */
+  margin: 10px auto; /* вертикальные отступы */
   box-sizing: border-box; /* чтобы padding не ломал max-width */
-}
-.invitation-text {
-  width: 290px;
-  overflow: hidden;
-  text-align: center;
-  margin: 0 auto;
 }
 
 .telegram-icon {
@@ -197,7 +191,14 @@ body {
   color: white;
   text-align: center;
 }
-
+.location-container {
+  display: flex;
+  flex-direction: column; /* вертикально */
+  align-items: center;
+  gap: 20px;
+  max-width: 900px;
+  margin: 30px auto;
+}
 .location-title {
   font-family: Great Vibes, cursive;
   font-weight: 400;
@@ -359,56 +360,133 @@ body {
 /* 10. МЕДИА-ЗАПРОСЫ (НОУТБУК)                     */
 /* -------------------------------------------------------------------------- */
 
-@media (min-width: 768px) {
-  /* На экранах >= 768px увеличиваем размеры шрифтов и отступы */
+/* ========================================================================== */
+/*  Адаптив для планшетов (768px+)                                            */
+/* ========================================================================== */
 
-  body {
-    padding: 0 40px; /* Увеличиваем отступы по бокам для ноутбука */
-  }
-
-  /* Hero */
+@media (min-width: 768px) and (max-width: 1024px) {
   .main-hero {
-    margin-top: 0px;
+    max-width: 1024px;
+    margin-bottom: 60px;
   }
-  .main-overlay {
-    bottom: 80px; /* Восстановим большой отступ */
-  }
+
   .main-title {
-    font-size: 52px; /* Восстановим исходный размер */
+    font-size: 96px;
   }
+
   .main-date {
-    font-size: 20px; /* Восстановим исходный размер */
+    font-size: 40px;
   }
 
-  /* Текст */
   .invitation-text,
-  .invitation-location,
-  .telegram-text,
-  .telegram-friends,
-  .telegram-final,
-  .dresscode-text,
   .afterparty-text,
-  .afterparty-subtext,
-  .highlight,
+  .dresscode-text,
+  .telegram-text {
+    font-size: 20px;
+    max-width: 700px;
+  }
   .invitation-note {
-    font-size: 18px; /* Восстановим исходный размер */
+    font-size: 20px;
+  }
+  .location-link {
+    font-size: 24px;
   }
 
-  /* Заголовки */
-  .dresscode-title,
-  .palette-title,
-  .age-text {
-    font-size: 30px; /* Восстановим исходный размер */
+  .location-container {
+    flex-direction: row; /* горизонтально */
+    align-items: flex-start;
   }
 
-  .location-title,
-  .signature-title {
-    font-size: 42px; /* Восстановим исходный размер */
+  .location-hero {
+    width: 50%; /* картинка слева */
   }
 
-  /* Afterparty Image */
+  .location-text {
+    flex: 1; /* текст справа */
+    margin-left: 20px;
+  }
+
+  .location-text .invitation-note {
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .location-title {
+    font-size: 48px; /* заголовок чуть больше */
+  }
+
+  .palette img,
+  .age-hero {
+    max-width: 500px;
+  }
+
   .afterparty img {
-    width: auto;
-    max-width: 199px; /* Восстановим исходную ширину */
+    max-width: 260px;
+    width: 40%;
+  }
+
+  .signature-hero {
+    max-width: 700px;
+  }
+
+  .signature-title {
+    font-size: 48px;
+  }
+}
+
+/* ========================================================= */
+/* 💻 1024–1440px — ноутбуки и компьютеры */
+/* ========================================================= */
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  body {
+    font-size: 20px;
+  }
+
+  .main-hero {
+    max-width: 900px;
+    margin-bottom: 80px;
+  }
+
+  .main-title {
+    font-size: 82px;
+  }
+
+  .main-date {
+    font-size: 28px;
+  }
+
+  .invitation-text,
+  .afterparty-text,
+  .dresscode-text,
+  .telegram-text {
+    font-size: 20px;
+    max-width: 900px;
+  }
+
+  .location-hero {
+    max-width: 650px;
+  }
+
+  .location-title {
+    font-size: 58px;
+  }
+
+  .palette img,
+  .age-hero {
+    max-width: 620px;
+  }
+
+  .afterparty img {
+    max-width: 320px;
+    width: 35%;
+  }
+
+  .signature-hero {
+    max-width: 900px;
+  }
+
+  .signature-title {
+    font-size: 64px;
   }
 }
