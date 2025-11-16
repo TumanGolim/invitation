@@ -34,6 +34,14 @@ body {
   margin-bottom: 100px;
 }
 
+.divider-disco {
+  width: 145px;
+  height: 0;
+  border-top: 1px solid #000; /* колір лінії */
+  opacity: 1;
+  margin: 30px auto; /* центрування */
+  margin-bottom: 100px;
+}
 /* -------------------------------------------------------------------------- */
 /* 2. Секция Hero                               */
 /* -------------------------------------------------------------------------- */
@@ -45,7 +53,6 @@ body {
   max-width: 551px;
   margin: 0 auto;
   overflow: hidden;
-  border-radius: 6px;
   margin-bottom: 40px;
   /* Сохраняем пропорции 551:836 */
   aspect-ratio: 551 / 836;
@@ -104,7 +111,6 @@ body {
 .telegram-friends,
 .telegram-final,
 .dresscode-text,
-.invitation-note,
 .afterparty-text,
 .afterparty-subtext {
   font-family: Raleway, sans-serif;
@@ -112,7 +118,20 @@ body {
   font-size: 16px;
   line-height: 1.6;
   text-align: center;
-  max-width: 600px; /* ограничение ширины */
+  max-width: 288px; /* ограничение ширины */
+  margin: 10px auto; /* вертикальные отступы */
+  box-sizing: border-box; /* чтобы padding не ломал max-width */
+}
+
+.invitation-note {
+  font-family: Raleway;
+  font-weight: 500;
+  font-style: Italic;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-align: center;
+  max-width: 260px; /* ограничение ширины */
   margin: 10px auto; /* вертикальные отступы */
   box-sizing: border-box; /* чтобы padding не ломал max-width */
 }
@@ -197,7 +216,7 @@ body {
   align-items: center;
   gap: 20px;
   max-width: 900px;
-  margin: 30px auto;
+  margin: auto;
 }
 .location-title {
   font-family: Great Vibes, cursive;
@@ -219,6 +238,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   margin: 30px auto 15px; /* Увеличим отступы */
+  width: 250px;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -248,7 +268,7 @@ body {
   font-style: italic;
   font-size: 16px; /* Базовый размер */
   text-align: center;
-  max-width: 600px;
+  max-width: 300px;
   margin: 10px auto;
 }
 
@@ -300,7 +320,6 @@ body {
   font-size: 16px; /* Базовый размер для мобильного */
   line-height: 1.6;
   text-align: center;
-  max-width: 600px; /* Ограничим ширину текста для читаемости */
   margin: auto;
   margin-bottom: 40px;
 }
@@ -309,8 +328,7 @@ body {
   font-weight: 500;
   font-size: 16px; /* Базовый размер для мобильного */
   line-height: 1.6;
-  text-align: center;
-  max-width: 600px; /* Ограничим ширину текста для читаемости */
+  text-align: center; /* Ограничим ширину текста для читаемости */
   margin: 40px auto;
 }
 
@@ -378,6 +396,7 @@ body {
     font-size: 40px;
   }
 
+  .telegram-friends,
   .invitation-text,
   .afterparty-text,
   .dresscode-text,
@@ -387,7 +406,13 @@ body {
   }
   .invitation-note {
     font-size: 20px;
+    max-width: 290px;
   }
+
+  .dresscode-title {
+    font-size: 40px;
+  }
+
   .location-link {
     font-size: 24px;
   }
@@ -395,6 +420,7 @@ body {
   .location-container {
     flex-direction: row; /* горизонтально */
     align-items: flex-start;
+    max-width: 700px;
   }
 
   .location-hero {
@@ -404,33 +430,108 @@ body {
   .location-text {
     flex: 1; /* текст справа */
     margin-left: 20px;
-  }
-
-  .location-text .invitation-note {
-    text-align: left;
-    font-size: 18px;
+    margin-top: 30px;
   }
 
   .location-title {
     font-size: 48px; /* заголовок чуть больше */
   }
 
-  .palette img,
-  .age-hero {
-    max-width: 500px;
+  .palette-title {
+    font-size: 40px;
+    width: 480px;
   }
 
+  .palette-note {
+    font-size: 20px;
+  }
+  .palette img {
+    aspect-ratio: 0;
+    max-width: 550px;
+  }
+
+  .age-hero {
+    max-width: 700px;
+  }
+  .age-text {
+    font-size: 40px;
+  }
+
+  .afterparty {
+    display: grid;
+    grid-template-columns: 1fr 330px; /* левая колонка — текст, правая — картинка */
+    grid-template-rows: auto auto; /* две строки для двух <p> */
+    gap: 0px 40px; /* вертикальный и горизонтальный отступ */
+    align-items: start; /* выравнивание по верху (можно center) */
+    max-width: 900px;
+    margin: 0 64px 0 64px;
+  }
+
+  /* Картинка — правая колонка, занимает обе строки */
   .afterparty img {
-    max-width: 260px;
-    width: 40%;
+    grid-column: 2;
+    grid-row: 1 / span 2; /* растянуть на 2 строки */
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+    object-fit: cover;
+    justify-self: end; /* прижать картинку к правому краю колонки */
+    border-radius: 6px;
+    flex-shrink: 0;
+    margin-right: 164px;
+    margin-top: 70px;
+  }
+
+  /* Верхний основной текст — левая колонка, первая строка */
+  .afterparty-text {
+    text-align: left;
+    font-size: 20px;
+    align-self: start;
+    margin-bottom: 0px;
+    text-align: center;
+    width: 320px;
+  }
+
+  /* Нижний подпись/подсказка — левая колонка, вторая строка */
+  .afterparty-subtext {
+    font-family: Raleway;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 0px;
+    text-align: center;
+    width: 280px;
+  }
+
+  .telegram-final {
+    font-size: 20px;
+    max-width: 670px;
+    margin-top: 80px;
+    margin-bottom: 120px;
+  }
+
+  .divider {
+    margin-bottom: 40px;
   }
 
   .signature-hero {
-    max-width: 700px;
+    max-width: 1024px;
   }
 
   .signature-title {
-    font-size: 48px;
+    font-size: 96px;
+  }
+
+  .highlight {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+
+  .disco {
+    margin-top: 0px;
   }
 }
 
@@ -438,55 +539,180 @@ body {
 /* 💻 1024–1440px — ноутбуки и компьютеры */
 /* ========================================================= */
 
-@media (min-width: 1024px) and (max-width: 1440px) {
-  body {
-    font-size: 20px;
+@media (min-width: 1024px) and (max-width: 2600px) {
+  .main-hero {
+    max-width: 1730px;
+    margin-bottom: 60px;
+    aspect-ratio: 0;
+    position: static;
+    max-height: 600px;
+    top: 35%;
   }
 
-  .main-hero {
-    max-width: 900px;
-    margin-bottom: 80px;
+  .main-hero img {
+    top: 30%;
+  }
+
+  .main-overlay {
+    margin-bottom: 550px;
   }
 
   .main-title {
-    font-size: 82px;
+    font-size: 96px;
   }
 
   .main-date {
-    font-size: 28px;
+    font-size: 40px;
+  }
+  .invitation {
+    margin-top: 1000px;
   }
 
   .invitation-text,
   .afterparty-text,
-  .dresscode-text,
   .telegram-text {
     font-size: 20px;
+    max-width: 860px;
+  }
+  .invitation-note {
+    font-size: 20px;
+    margin-top: 60px;
+    max-width: 470px;
+  }
+  .location-link {
+    font-size: 24px;
+  }
+
+  .dresscode-title {
+    font-size: 40px;
+  }
+
+  .dresscode-text {
+    font-size: 20px;
+    max-width: 720px;
+  }
+
+  .location-container {
+    flex-direction: row; /* горизонтально */
+    align-items: flex-start;
     max-width: 900px;
   }
 
   .location-hero {
-    max-width: 650px;
+    width: 50%; /* картинка слева */
+  }
+
+  .location-text {
+    flex: 1; /* текст справа */
+    margin-left: 20px;
+    margin-top: 30px;
   }
 
   .location-title {
-    font-size: 58px;
+    font-size: 48px; /* заголовок чуть больше */
   }
 
-  .palette img,
+  .palette-title {
+    font-size: 40px;
+    width: 900px;
+    margin-bottom: 60px;
+  }
+
+  .palette-note {
+    font-size: 20px;
+  }
+  .palette img {
+    aspect-ratio: 0;
+    max-width: 550px;
+  }
+
   .age-hero {
-    max-width: 620px;
+    max-width: 900px;
+  }
+  .age-text {
+    margin-top: 60px;
+    font-size: 40px;
   }
 
+  .afterparty {
+    display: grid;
+    grid-template-columns: 1fr 330px; /* левая колонка — текст, правая — картинка */
+    grid-template-rows: auto auto; /* две строки для двух <p> */
+    gap: 0px 40px; /* вертикальный и горизонтальный отступ */
+    align-items: start; /* выравнивание по верху (можно center) */
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Картинка — правая колонка, занимает обе строки */
   .afterparty img {
-    max-width: 320px;
-    width: 35%;
+    grid-column: 2;
+    grid-row: 1 / span 2; /* растянуть на 2 строки */
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+    object-fit: cover;
+    justify-self: end; /* прижать картинку к правому краю колонки */
+    border-radius: 6px;
+    flex-shrink: 0;
+    margin-right: 164px;
+    margin-top: 70px;
+  }
+
+  /* Верхний основной текст — левая колонка, первая строка */
+  .afterparty-text {
+    text-align: left;
+    font-size: 20px;
+    align-self: start;
+    margin-bottom: 0px;
+    text-align: center;
+    width: 490px;
+  }
+
+  /* Нижний подпись/подсказка — левая колонка, вторая строка */
+  .afterparty-subtext {
+    font-family: Raleway;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 0px;
+    text-align: center;
+    width: 400px;
+  }
+
+  .telegram-final {
+    font-size: 20px;
+    max-width: 700px;
+    margin-top: 80px;
+    margin-bottom: 120px;
+  }
+
+  .telegram-friends {
+    font-size: 20px;
+    max-width: 650px;
+  }
+
+  .divider {
+    margin-bottom: 40px;
   }
 
   .signature-hero {
-    max-width: 900px;
+    max-width: 1730px;
   }
 
   .signature-title {
-    font-size: 64px;
+    font-size: 96px;
+  }
+
+  .highlight {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+
+  .disco {
+    margin-top: 0px;
   }
 }
