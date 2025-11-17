@@ -111,8 +111,7 @@ body {
 .telegram-friends,
 .telegram-final,
 .dresscode-text,
-.afterparty-text,
-.afterparty-subtext {
+.afterparty-text {
   font-family: Raleway, sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -121,6 +120,16 @@ body {
   max-width: 288px; /* ограничение ширины */
   margin: 10px auto; /* вертикальные отступы */
   box-sizing: border-box; /* чтобы padding не ломал max-width */
+}
+.afterparty-subtext {
+  font-family: Raleway;
+  font-weight: 500;
+  font-style: Italic;
+  font-size: 20px;
+  max-width: 288px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-align: center;
 }
 
 .invitation-note {
@@ -269,7 +278,7 @@ body {
   font-size: 16px; /* Базовый размер */
   text-align: center;
   max-width: 300px;
-  margin: 10px auto;
+  margin: 40px auto 0;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -549,8 +558,8 @@ body {
     top: 50%;
   }
 
-  .main-overlay{
-   bottom: 450px;
+  .main-overlay {
+    bottom: 450px;
   }
 
   .main-title {
