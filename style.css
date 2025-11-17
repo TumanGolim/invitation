@@ -545,7 +545,6 @@ body {
     margin-bottom: 60px;
     aspect-ratio: 0;
     position: static;
-    max-height: 600px;
     top: 35%;
   }
 
@@ -554,7 +553,9 @@ body {
   }
 
   .main-overlay {
-    margin-bottom: 550px;
+    bottom: 0;
+    margin-top: 400px;
+    position: relative;
   }
 
   .main-title {
@@ -565,7 +566,7 @@ body {
     font-size: 40px;
   }
   .invitation {
-    margin-top: 1000px;
+    margin-top: 400px;
   }
 
   .invitation-text,
@@ -620,6 +621,7 @@ body {
 
   .palette-note {
     font-size: 20px;
+    max-width: 500px;
   }
   .palette img {
     aspect-ratio: 0;
@@ -632,6 +634,7 @@ body {
   .age-text {
     margin-top: 60px;
     font-size: 40px;
+    width: 320px;
   }
 
   .afterparty {
