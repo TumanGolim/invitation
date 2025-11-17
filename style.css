@@ -542,20 +542,15 @@ body {
 @media (min-width: 1024px) and (max-width: 2600px) {
   .main-hero {
     max-width: 1730px;
-    margin-bottom: 60px;
-    aspect-ratio: 0;
-    position: static;
-    top: 35%;
+    max-height: 1010px;
   }
 
   .main-hero img {
-    top: 30%;
+    top: 50%;
   }
 
-  .main-overlay {
-    bottom: 0;
-    margin-top: 400px;
-    position: relative;
+  .main-overlay{
+   bottom: 450px;
   }
 
   .main-title {
@@ -564,9 +559,6 @@ body {
 
   .main-date {
     font-size: 40px;
-  }
-  .invitation {
-    margin-top: 400px;
   }
 
   .invitation-text,
